@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 2.8)
+cmake_minimum_required(VERSION 2.8...4.0)
 project(OIS)
 
 set(CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/CmakeModules)
@@ -218,7 +218,9 @@ endif()
 if(UNIX)
 
     if (NOT APPLE)
-        add_dependencies(OIS X11)
+        if (${CMAKE_VERSION} VERSION_LESS_EQUAL "2.8")
+            add_dependencies(OIS X11)
+        endif()
         target_link_libraries(OIS X11)
     endif()
 

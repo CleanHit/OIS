@@ -4,3 +4,8 @@ includes/OISPrereqs.h
 
 
 *.TMP
+### VisualStudioCode ###
+.vscode/**/*
+!.vscode/windows/
+!.vscode/windows/*.default
+*.code-workspace
